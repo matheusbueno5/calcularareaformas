@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade caculando formas geométricas</title>
+</head>
+<body>
+    <h1>Calculando formas geométricas com o usuário</h1>
+    <p>Largura: <span id = "larguraa"></span> metros</p>
+    <p>Comprimento: <span id = "comprimentoo"></span> metros</p>
+    <p>Raio: <span id = "raioo"></span> metros</p>
+    <p>Lado: <span id = "ladoo"></span> metros</p>
+    <p>Resultado da área: <span id = "area"></span> m²</p>
+    <script>
+        function calculoarea(){
+            let formas = prompt ("Qual forma geométrica você deseja calcular a área? \n1 - Triângulo \n2 - Círculo \n3 - Quadrado")
+            let largura = " 0 ";
+            let comprimento = " 0 ";
+            let resultado;
+            let raio = " 0 ";
+            let lado = " 0 ";
+            if (formas == "2") {
+                raio = Number (prompt("Digite o valor do raio."));
+            } if (formas == "3"){
+                lado = Number (prompt ("Digite o valor dos lados."));
+            } if (formas == "1"){
+                largura = Number(prompt("Digite o valor da largura."));
+                comprimento = Number(prompt("Digite o valor do comprimento."));
+            } else {
+                resultado = " ";
+            }
+            switch (formas) {
+                case "1":
+                    resultado = ((comprimento * largura) / 2);
+                    break;
+                case "2":
+                    resultado = (3.14 * (raio * raio));
+                    break;
+                case "3":
+                    resultado = lado * lado;
+                    break;            
+                default:
+                    resultado = "Opção Inválida"
+                    break;
+            }
+            document.getElementById("larguraa").innerHTML += "<br>" + largura;
+            document.getElementById("comprimentoo").innerHTML += "<br>" + comprimento;
+            document.getElementById("raioo").innerHTML += "<br>" + raio;
+            document.getElementById("ladoo").innerHTML += "<br>" + lado;
+            document.getElementById("area").innerHTML += "<br>" + resultado;
+        } calculoarea();
+
+    </script>
+    
+</body>
+</html>
